@@ -41,9 +41,13 @@ class ConfusionMatrix:
         """
         Return intersection-over-union (Jaccard index) of boxes.
         Both sets of boxes are expected to be in (x1, y1, x2, y2) format.
+        The sets of boxes are referent to one image prediction.
         Arguments:
             detections (Array[N, 6]), x1, y1, x2, y2, conf, class
             labels (Array[M, 5]), class, x1, y1, x2, y2
+        Examples for input:
+            detections = [[349, 832, 470, 907, 0.9968715906143188, 0], [469, 789, 676, 886, 0.9854957461357117, 0], [759, 887, 907, 1065, 0.9964740872383118, 4]]
+            labels = [[0, 575, 789, 677, 889], [0, 469, 806, 581, 860], [0, 349, 829, 472, 907]]
         Returns:
             None, updates confusion matrix accordingly
         """
